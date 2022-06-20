@@ -1,6 +1,5 @@
 # monorepo-notion-helper
 
-[![Build Status](https://github.com/jaem1n207/monorepo-notion-helper/workflows/tests/badge.svg)](https://github.com/jaem1n207/monorepo-notion-helper/actions)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Archisketch-Ben/monorepo-notion-helper?color=green&style=flat-square)
 ![Github Issues](https://img.shields.io/github/issues/Archisketch-Ben/monorepo-notion-helper)
 ![Github Pull requests](https://img.shields.io/bitbucket/pr/Archisketch-Ben/monorepo-notion-helper)
