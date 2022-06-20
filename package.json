@@ -1,5 +1,5 @@
 {
-  "name": "sample-monorepo",
+  "name": "monorepo-notion-helper",
   "type": "module",
   "workspaces": [
     "packages/*"
@@ -8,13 +8,13 @@
     "clean": "rimraf ./packages/*/dist",
     "build": "tsc --build",
     "lint": "eslint .",
-    "pretest": "npm run lint && npm run build",
-    "test": "npm run test:only",
+    "pretest": "lint && build",
+    "test": "test:only",
     "test:only": "mocha \"packages/*/dist/test/**/*.spec.js\" --parallel",
-    "start": "npm run start:client",
-    "start:client": "npm run -w @sample/app start",
-    "prestart:server": "npm run -w @sample/app bundle:prod",
-    "start:server": "npm run -w @sample/server start",
+    "start": "start:client",
+    "start:client": "-w @sample/app start",
+    "prestart:server": "-w @sample/app bundle:prod",
+    "start:server": "-w @sample/server start",
     "prettify": "npx prettier . --write"
   },
   "devDependencies": {

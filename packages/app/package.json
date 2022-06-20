@@ -30,7 +30,7 @@
     "!src/tsconfig.json"
   ],
   "license": "MIT",
-  "repository": "git@github.com:wixplosives/sample-monorepo.git",
+  "repository": "git@github.com:jaem1n207/monorepo-notion-helper.git",
   "private": true,
   "publishConfig": {
     "access": "public"
