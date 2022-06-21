@@ -1,7 +1,7 @@
 import type React from 'react';
 
 export interface MainProps {
-  text: string;
+  children: React.ReactElement;
 }
 
-export const Main: React.FC<MainProps> = ({ text }) => <main>{text}</main>;
+export const Main: React.FC<MainProps> = ({ children }) => <main>{children}</main>;
