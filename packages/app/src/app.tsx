@@ -1,5 +1,5 @@
 import type React from 'react';
-import { Main } from '@sample/components';
+import { Main } from '@notion-helper/components';
 
 export interface AppProps {
   text: string;

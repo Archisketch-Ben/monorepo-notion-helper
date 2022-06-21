@@ -1,4 +1,4 @@
-# @sample/components
+# @notion-helper/components
 
 Exposes an example `Main` React component.
 

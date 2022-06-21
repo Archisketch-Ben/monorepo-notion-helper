@@ -3,10 +3,10 @@ import { createRequire } from 'node:module';
 import express from 'express';
 import compression from 'compression';
 import ReactDOMServer from 'react-dom/server';
-import { App } from '@sample/app';
+import { App } from '@notion-helper/app';
 
 const require = createRequire(import.meta.url);
-const appRootDirectory = path.dirname(require.resolve('@sample/app/package.json'));
+const appRootDirectory = path.dirname(require.resolve('@notion-helper/app/package.json'));
 const appBundleDirectory = path.join(appRootDirectory, 'dist/umd');
 
 export function createHttpServer(): express.Express {

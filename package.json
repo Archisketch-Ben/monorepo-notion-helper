@@ -12,9 +12,9 @@
     "test": "yarn test:only",
     "test:only": "mocha \"packages/*/dist/test/**/*.spec.js\" --parallel",
     "start": "yarn start:client",
-    "start:client": "yarn workspace @sample/app start",
-    "prestart:server": "yarn workspace @sample/app bundle:prod",
-    "start:server": "yarn workspace @sample/server start",
+    "start:client": "yarn workspace @notion-helper/app start",
+    "prestart:server": "yarn workspace @notion-helper/app bundle:prod",
+    "start:server": "yarn workspace @notion-helper/server start",
     "prettify": "npx prettier . --write",
     "workspace:info": "yarn workspaces info"
   },

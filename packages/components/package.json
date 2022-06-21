@@ -1,5 +1,5 @@
 {
-  "name": "@sample/components",
+  "name": "@notion-helper/components",
   "version": "1.0.0",
   "type": "module",
   "exports": {
