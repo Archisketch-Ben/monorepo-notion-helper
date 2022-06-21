@@ -8,14 +8,15 @@
     "clean": "rimraf ./packages/*/dist",
     "build": "tsc --build",
     "lint": "eslint .",
-    "pretest": "lint && build",
-    "test": "test:only",
+    "pretest": "yarn lint && yarn build",
+    "test": "yarn test:only",
     "test:only": "mocha \"packages/*/dist/test/**/*.spec.js\" --parallel",
-    "start": "start:client",
-    "start:client": "-w @sample/app start",
-    "prestart:server": "-w @sample/app bundle:prod",
-    "start:server": "-w @sample/server start",
-    "prettify": "npx prettier . --write"
+    "start": "yarn start:client",
+    "start:client": "yarn workspace @sample/app start",
+    "prestart:server": "yarn workspace @sample/app bundle:prod",
+    "start:server": "yarn workspace @sample/server start",
+    "prettify": "npx prettier . --write",
+    "workspace:info": "yarn workspaces info"
   },
   "devDependencies": {
     "@types/chai": "^4.3.1",
