@@ -1,9 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: yarn
+  - package-ecosystem: 'yarn'
     directory: '/'
     schedule:
       interval: daily
+    target-branch: 'develop'
     open-pull-requests-limit: 10
     versioning-strategy: increase
     ignore:
