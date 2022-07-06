@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@notion-helper/components": "^1.0.0",
+    "dotenv": "^16.0.1",
     "sanitize.css": "^13.0.0"
   },
   "files": [
