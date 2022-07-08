@@ -14,5 +14,6 @@ module.exports = {
     path: path.join(__dirname, 'dist/umd'),
     libraryTarget: 'umd',
   },
+  // @ts-ignore
   plugins: [...rootWebpackConfig.plugins, new HtmlWebpackPlugin({ title: 'monorepo-notion-helper' })],
 };

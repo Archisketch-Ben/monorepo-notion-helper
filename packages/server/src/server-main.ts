@@ -9,5 +9,6 @@ app.listen(PORT, () => {
   console.log(`Listening on:`);
   console.log(`  http://localhost:${PORT}/ - client only rendering`);
   console.log(`  http://localhost:${PORT}/server - ssr with hydration`);
+  console.log(`  http://localhost:${PORT}/notion - ready notion API`);
   /* eslint-enable no-console */
 });

@@ -22,9 +22,10 @@
     }
   },
   "rules": {
+    "no-unsafe-assignment": "off",
     "tailwindcss/classname-order": "off",
     "no-only-tests/no-only-tests": "error",
-    "no-console": "error",
+    "no-console": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "react/prop-types": "off"
