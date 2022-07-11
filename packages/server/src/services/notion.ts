@@ -16,12 +16,16 @@ const client = new Client({
 // const QA_DATABASE_ID = process.env['NOTION_QA_DB_KEY'] ?? 'bf44a03ccfd94bc1ba43ef3ee91be4ab';
 // const QA_RESULT_DB_ID = process.env['NOTION_QA_RESULT_DB_KEY'] ?? '68cc9f3094834f0bad3a602b5b33b363';
 
+interface queryDBProps extends QueryDatabaseParameters {
+  type: 'list' | 'result';
+}
+
 /**
  * Notion 데이터베이스에서 페이지를 가져옵니다.
  *
  * @returns {Promise<Array<{ pageId: string, 항목 ID: string }>>}
  */
-const queryDB = async ({ database_id }: QueryDatabaseParameters) => {
+const queryDB = async ({ database_id, type }: queryDBProps) => {
   const pages = [];
   let cursor = undefined;
 
@@ -41,13 +45,19 @@ const queryDB = async ({ database_id }: QueryDatabaseParameters) => {
   console.log(`${pages.length} `);
 
   return pages.map((page) => {
-    return {
-      pageId: page.id,
-      'Related to QA 테스트 결과 (property)': page.properties['Related to QA 테스트 결과 (property)'].relation,
-      프론트: page.properties['프론트'].people,
-      백엔드: page.properties['백엔드'].people,
-      '항목 ID': page.properties['항목 ID'].title,
-    };
+    if (type === 'list') {
+      return {
+        pageId: page.id,
+        'Related to QA 테스트 결과 (property)': page.properties['Related to QA 테스트 결과 (property)'].relation,
+        프론트: page.properties['프론트'].people,
+        백엔드: page.properties['백엔드'].people,
+        '항목 ID': page.properties['항목 ID'].title,
+      };
+    } else if (type === 'result') {
+      return {
+        pageId: page.id,
+      };
+    }
   });
 };
 

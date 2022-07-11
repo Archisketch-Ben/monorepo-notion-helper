@@ -36,9 +36,10 @@ export function createHttpServer(): express.Express {
   app.post('/notion/database/query', async (req: express.Request, res: express.Response) => {
     console.log(req.body);
     const database_id = req.body['database_id'] ?? '';
+    const type = req.body['type'] ?? 'list';
 
     try {
-      const dbQueryResponse = await queryDB({ database_id });
+      const dbQueryResponse = await queryDB({ database_id, type });
       res.json(dbQueryResponse);
     } catch (err) {
       console.error(err);

@@ -1,5 +1,5 @@
 import type React from 'react';
-import { Copyright, Main } from '@notion-helper/components';
+import { Copyright, Main, Picture } from '@notion-helper/components';
 import { useState } from 'react';
 import axiosLib from 'axios';
 import {
@@ -34,7 +34,7 @@ export const App: React.FC<AppProps> = ({ text }) => {
 
   // const [pageId, setPageId] = useState('');
 
-  const fetchDB = () => {
+  const queryDB = () => {
     const payload = { database_id: qaListId };
 
     axios
@@ -48,7 +48,7 @@ export const App: React.FC<AppProps> = ({ text }) => {
   };
 
   const handleSubmit = () => {
-    fetchDB();
+    queryDB();
   };
 
   /**
@@ -82,19 +82,7 @@ export const App: React.FC<AppProps> = ({ text }) => {
       <ThemeProvider theme={theme}>
         <Grid container component="main" sx={{ height: '100vh' }}>
           <CssBaseline />
-          <Grid
-            item
-            xs={false}
-            sm={4}
-            md={7}
-            sx={{
-              backgroundImage: 'url(https://source.unsplash.com/random)',
-              backgroundRepeat: 'no-repeat',
-              backgroundColor: (t) => (t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900]),
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
+          <Picture />
           <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
             <Box
               sx={{
@@ -109,7 +97,7 @@ export const App: React.FC<AppProps> = ({ text }) => {
                 <LockOutlined />
               </Avatar>
               <Typography component="h1" variant="h5" style={{ maxWidth: '100%' }}>
-                {text} | bf44a03ccfd94bc1ba43ef3ee91be4ab
+                {text} | bf44a03ccfd94bc1ba43ef3ee91be4ab | 68cc9f3094834f0bad3a602b5b33b363
               </Typography>
               <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                 <TextField
